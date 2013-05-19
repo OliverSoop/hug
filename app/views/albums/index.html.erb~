@@ -1,0 +1,35 @@
+<div class="header">
+    	<h1>Bombhug</h1>
+</div>
+
+<div class="links">
+	<%= link_to (t :frontPage), home_index_path %>
+	<%= link_to (t :news), news_index_path %>
+	<%= link_to (t :events), events_path %>
+	<%= link_to (t :artists), artists_path %>
+	<%= link_to (t :albums), albums_path %>
+	<%= link_to (t :releases), singles_path %>
+	<%= link_to (t :contacts), contacts_path %>
+</div>
+
+<div class="container">
+	<p><%= paginate @albums %></p>
+	<% @albums.each do |album| %>
+		<div class="galleryItem">
+			<a href="#"><%= image_tag album.pic.url %></a>
+			<h3><%= link_to album.name, album %></h3>
+			<h3><%= album.release_date.strftime('%Y') %></h3>
+			<% if signed_in? %>
+    		<p><%= link_to 'Edit', edit_album_path(album) %> |
+    		<%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %> |
+				<%= link_to "Logout", "/logout" %></p>
+  		<% end %>
+		</div>
+	<% end %>
+</div>
+
+
+<br />
+<% if signed_in? %>
+	<%= link_to 'New Album', new_album_path %>
+<% end %>

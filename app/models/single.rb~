@@ -1,0 +1,4 @@
+class Single < ActiveRecord::Base
+  attr_accessible :created, :info, :title, :year
+	belongs_to :artist
+end

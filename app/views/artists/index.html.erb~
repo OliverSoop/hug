@@ -1,0 +1,32 @@
+<div class="header">
+    	<h1>Bombhug</h1>
+</div>
+
+<div class="links">
+	<%= link_to (t :frontPage), home_index_path %>
+	<%= link_to (t :news), news_index_path %>
+	<%= link_to (t :events), events_path %>
+	<%= link_to (t :artists), artists_path %>
+	<%= link_to (t :albums), albums_path %>
+</div>
+
+<div class="container">
+	<% @artists.each do |artist| %>
+		<div class="galleryItem">
+			<a href="#"><%= image_tag artist.pic.url %></a>
+			<h3><%= artist.name %></h3>
+			<p><%= link_to artist.info, artist %></p>
+			
+			<% if signed_in? %>
+    		<p><%= link_to 'Edit', edit_artist_path(artist) %></p>
+    		<p><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+				<p><%= link_to "Logout", "/logout" %></p>
+  		<% end %>
+		</div>
+	<% end %>
+</div>
+
+<br />
+<% if signed_in? %>
+	<%= link_to 'New Artist', new_artist_path %>
+<% end %>

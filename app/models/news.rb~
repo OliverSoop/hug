@@ -1,0 +1,4 @@
+class News < ActiveRecord::Base
+  attr_accessible :content, :created, :title
+	attr_accessible has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+end

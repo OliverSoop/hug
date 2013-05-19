@@ -1,0 +1,21 @@
+<div class="header">
+    	<h1>Bombhug</h1>
+</div>
+
+<div class="links">
+	<%= link_to (t :news), news_index_path %>
+	<%= link_to (t :events), events_path %>
+	<%= link_to (t :artists), artists_path %>
+	<%= link_to (t :albums), albums_path %>
+</div>
+
+<div class="container">
+	<div class="single-item">
+			<p>Bombhug OÜ</p>
+			<p>Indrek Ups</p>
+			<p>440333400</p>
+	</div>	
+</div>
+
+
+

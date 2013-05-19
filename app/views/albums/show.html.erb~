@@ -1,0 +1,33 @@
+<div class="header">
+    	<h1>Bombhug</h1>
+</div>
+
+<div class="links">
+	<%= link_to (t :frontPage), home_index_path %>
+	<%= link_to (t :news), news_index_path %>
+	<%= link_to (t :events), events_path %>
+	<%= link_to (t :artists), artists_path %>
+	<%= link_to (t :albums), albums_path %>
+	<%= link_to (t :releases), singles_path %>
+	<%= link_to (t :contacts), contacts_path %>
+</div>
+
+<div class="container">
+	<div class="single-item">
+			<a href="#"><%= image_tag @album.pic.url(:medium) %></a>
+			<h3><%= @album.name %></h3>
+			<h2><%= @album.release_date.strftime('%Y') %></h2>
+			<%= simple_format(@album.info) %>
+			<%= simple_format(@album.prizes) %>
+	</div>	
+</div>
+
+
+<br />
+<% if signed_in? %>
+	<%= link_to 'New Album', new_album_path %>
+	<%= link_to 'Edit', edit_album_path(@album) %> 
+	<%= link_to 'Back', album_index_path %>
+	<%= link_to "Logout", "/logout" %></p>
+<% end %>
+

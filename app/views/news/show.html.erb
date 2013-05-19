@@ -1,0 +1,31 @@
+<div class="header">
+    	<h1>Bombhug</h1>
+</div>
+
+<div class="links">
+	<%= link_to (t :frontPage), home_index_path %>
+	<%= link_to (t :news), news_index_path %>
+	<%= link_to (t :events), events_path %>
+	<%= link_to (t :artists), artists_path %>
+	<%= link_to (t :albums), albums_path %>
+	<%= link_to (t :releases), singles_path %>
+	<%= link_to (t :contacts), contacts_path %>
+</div>
+
+<div class="container">
+	<div class="single-item">
+			<a href="#"><%= image_tag @news.pic.url(:medium) %></a>
+			<h3><%= @news.title %></h3>
+			<%= simple_format(@news.content) %>
+	</div>	
+</div>
+
+
+<br />
+<% if signed_in? %>
+	<%= link_to 'New News', new_news_path %>
+	<%= link_to 'Edit', edit_news_path(@news) %> 
+	<%= link_to 'Back', news_index_path %>
+<% end %>
+
+
