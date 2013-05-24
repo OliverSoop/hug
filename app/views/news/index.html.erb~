@@ -26,7 +26,6 @@
 			<% if signed_in? %>
     		<p><%= link_to 'Edit', edit_news_path(news) %> |
     		<%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %> |
-				<%= link_to "Logout", "/logout" %></p>
   		<% end %>
 		</div>
 	<% end %>
@@ -36,4 +35,5 @@
 <br />
 <% if signed_in? %>
 	<%= link_to 'New News', new_news_path %>
+	<%= link_to "Logout", "/logout" %></p>
 <% end %>

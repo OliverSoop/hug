@@ -27,7 +27,7 @@
 <% if signed_in? %>
 	<%= link_to 'New Album', new_album_path %>
 	<%= link_to 'Edit', edit_album_path(@album) %> 
-	<%= link_to 'Back', album_index_path %>
+	<%= link_to 'Back', album_path %>
 	<%= link_to "Logout", "/logout" %></p>
 <% end %>
 

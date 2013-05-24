@@ -1,5 +1,10 @@
 <div class="header">
     	<h1>Bombhug</h1>
+	<% if :et == I18n.locale %>
+  	<%= link_to "English", '/?lang=en'%>
+	<% else %>
+  	<%= link_to "Eesti keel", '/?lang=et'%>
+	<%end%>
 </div>
 
 <div class="links">
@@ -23,9 +28,9 @@
 				<p><%= link_to news.content, news %></p>
 			<% end %>
 			<% if signed_in? %>
-    		<p><%= link_to 'Edit', edit_news_path(news) %></p>
-    		<p><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-				<p><%= link_to "Logout", "/logout" %></p>
+    		<p><%= link_to 'Edit', edit_news_path(news) %> |
+    		<%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %> |
+				<%= link_to "Logout", "/logout" %></p>
   		<% end %>
 		</div>
 	<% end %>

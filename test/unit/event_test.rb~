@@ -10,8 +10,6 @@ class EventTest < ActiveSupport::TestCase
 		now = DateTime.now
 		event.time = now
 		assert event.time == now
-		event.created = now
-		assert event.created == now
 	end
   # test "the truth" do
   #   assert true

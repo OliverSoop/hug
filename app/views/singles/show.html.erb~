@@ -26,7 +26,7 @@
 <% if signed_in? %>
 	<%= link_to 'New Single', new_single_path %>
 	<%= link_to 'Edit', edit_single_path(@single) %> 
-	<%= link_to 'Back', album_path %>
+	<%= link_to 'Back', single_path %>
 	<%= link_to "Logout", "/logout" %></p>
 <% end %>
 

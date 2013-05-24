@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
 			user.email = auth["info"]["email"]
-			user.allowed = false;
+			user.allowed = true;
 			user.save!
     end
   end

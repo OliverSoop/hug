@@ -10,12 +10,17 @@
 	<%= link_to (t :albums), albums_path %>
 	<%= link_to (t :releases), singles_path %>
 	<%= link_to (t :contacts), contacts_path %>
+	<% if :et == I18n.locale %>
+  	<%= link_to "English", '/?lang=en'%>
+	<% else %>
+  	<%= link_to "Eesti keel", '/?lang=et'%>
+	<%end%>
 </div>
 
 <div class="container">
 	<div class="single-item">
 			<p>Bombhug OÜ</p>
-			<p>Indrek Ups</p>
+			<p>John Smith</p>
 			<p>440333400</p>
 	</div>	
 </div>

@@ -13,6 +13,6 @@
  */
 .lang {
 	width: 80%;
-	margin: auto;
+	margin: 30px auto;
 	overflow: hidden;
 }
