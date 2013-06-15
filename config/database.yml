@@ -25,7 +25,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  encoding: UTF-8
+  adapter: postgresql
+  database: bombhugc_hug
   pool: 5
   timeout: 5000
+  username: hugbomb
+  password: Edelt7sauda

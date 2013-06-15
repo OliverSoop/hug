@@ -16,11 +16,6 @@ class NewsTest < ActiveSupport::TestCase
     assert_equal false, news.valid?
   end
 
-  test "News creation with title length less than 1" do
-		news = News.new(:title => "", :content => "Prizes")
-    assert_equal false, news.valid?
-  end
-
   test "News creation with all the required fields" do
 		news = News.new(:title => "Name", :content => "Prizes", :created => Date.current())
     assert_equal true, news.valid?

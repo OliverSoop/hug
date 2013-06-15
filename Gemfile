@@ -5,13 +5,6 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-
-gem 'paperclip'
-
-gem 'kaminari'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,6 +35,15 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'therubyracer'
+
 gem 'thin'
 
 gem 'omniauth-google-oauth2'
+
+gem 'pg'
+
+gem 'paperclip'
+
+gem 'kaminari'
+
+

@@ -1,6 +1,8 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :info, :name
-
+  attr_accessible :info, :name, :pic
+	has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	validates_presence_of :info, :name
+	validates_length_of :info, :name :in => 0..
 	has_many :members
 	has_many :albums
 end

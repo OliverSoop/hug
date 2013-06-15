@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SingleTest < ActiveSupport::TestCase
   test "Single creation without info" do
-		single = Single.new(:title => "Title", :year => "2013")
+		single = Single.new(:info => "Info", :title => "Title", :year => "2013")
     assert_equal false, single.valid?
   end
 

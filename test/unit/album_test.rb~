@@ -11,7 +11,7 @@ class AlbumTest < ActiveSupport::TestCase
     assert_equal false, album.valid?
   end
 
-  test "Album creation with all the required fields" do
+  test "Album creation without all the required fields" do
 		album = Album.new(:name => "Name", :info => "info", :prizes => "Prizes")
     assert_equal true, album.valid?
   end
